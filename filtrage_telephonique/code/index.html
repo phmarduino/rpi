@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Gestion appels téléphoniques</title>
+    <link rel="stylesheet" href="../static/style.css/">
+  </head>
+  <body>
+    <h1>Bienvenue sur le site de gestion des appels téléphoniques</h1>
+    <h2>Nous sommes le : {{ madate }} et il est : {{ monheure }}</h2>
+    <h2>Nombre d'appels dans la base : {{ nbappels }}</h2>
+    
+    {% for row in rows2 %}
+     <h2>Dernier appel :</h2>
+     <p>
+       Le {{row["date_modem"]}} à {{row["heure_modem"]}} <br />
+       Numéro de téléphone : {{row["num_tel"]}} <br />
+       Nom appelant : {{row["nom_appel"]}} <br />
+     </p>
+     {% endfor %}
+    
+  </body>
+  <a href="{{url_for("liste_appels")}}"> Aller sur la page la liste des appels</a>
+</html>
