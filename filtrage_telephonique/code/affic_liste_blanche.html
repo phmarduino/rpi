@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Gestion appels téléphoniques</title>
+    <link rel="stylesheet" href="../static/style.css/">
+  </head>
+  <body>
+    <img src="../static/phmarduino_logo-18032020.JPG" height="10%" width=10%"">
+    <h1>Liste blanche des contacts</h1>
+    <a href="{{url_for("index")}}"> Aller sur la page d'accueil</a><br>
+    <a href="{{url_for("liste_appels")}}"> Affichage liste des appels</a><br>
+    <a href="{{url_for("contact")}}"> Ajout contact liste blanche</a><br><br>
+    <br>
+    <table border = 1>
+      <thead>
+        <td>Indicatif Pays</td>
+        <td>Numéro téléphone</td>
+        <td>Nom contact</td>
+        <td>Type</td>
+        <td>Date dernier appel</td>
+        <td>Heure dernier appel</td>
+        <td>Date ajout</td>
+        <td>Heure ajout</td>
+        <td>Nbre appels</td>
+        <td>Action</td>
+      </thead>
+      {% for row in rows %}
+      <tr>
+        <td>{{row["indicatif"]}}</td>
+        <td>{{row["num_tel"]}}</td>
+        <td>{{row["nom"]}}</td>
+        <td>{{row["type"]}}</td>
+        <td>{{row["dat_der_app"]}}</td>
+        <td>{{row["heur_der_app"]}}</td>
+        <td>{{row["date_ajout"]}}</td>
+        <td>{{row["heure_ajout"]}}</td>
+        <td>{{row["nb_appels"]}}</td>
+        <td>
+          <form action="{{ url_for('delete_contact')}}" method=post>
+            <input type=hidden name=num_tel_del value={{row.num_tel}}>
+            <input type=submit value=Delete>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

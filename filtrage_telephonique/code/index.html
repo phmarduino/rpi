@@ -5,10 +5,17 @@
     <link rel="stylesheet" href="../static/style.css/">
   </head>
   <body>
-    <h1>Bienvenue sur le site de gestion des appels téléphoniques</h1>
+	<img src="../static/phmarduino_logo-18032020.JPG" height="10%" width=10%"">
+	<h1>Bienvenue sur le site de gestion des appels téléphoniques</h1>
+	<br>
+	<a href="{{url_for("liste_appels")}}"> Affichage liste des appels</a><br>
+	<a href="{{url_for("liste_contacts")}}"> Affichage liste blanche</a><br>
+	<a href="{{url_for("contact")}}"> Ajout contact liste blanche</a><br>
+	<br>
     <h2>Nous sommes le : {{ madate }} et il est : {{ monheure }}</h2>
     <h2>Nombre d'appels dans la base : {{ nbappels }}</h2>
-    
+    <h2>Nombre de contacts dans la base : {{ nbcontacts }}</h2>
+
     {% for row in rows2 %}
      <h2>Dernier appel :</h2>
      <p>
@@ -19,5 +26,6 @@
      {% endfor %}
     
   </body>
-  <a href="{{url_for("liste_appels")}}"> Aller sur la page la liste des appels</a>
+
+  
 </html>

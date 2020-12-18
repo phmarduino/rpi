@@ -5,14 +5,19 @@
     <link rel="stylesheet" href="../static/style.css/">
   </head>
   <body>
+    <img src="../static/phmarduino_logo-18032020.JPG" height="10%" width=10%"">
     <h1>Liste des appels téléphoniques</h1>
-    <a href="{{url_for("index")}}"> Aller sur la page d'accueil</a>
+    <a href="{{url_for("index")}}"> Aller sur la page d'accueil</a><br>
+    <a href="{{url_for("liste_contacts")}}"> Affichage liste blanche</a><br>
+   	<a href="{{url_for("contact")}}"> Ajout contact liste blanche</a><br><br>
+    <br>
     <table border = 1>
       <thead>
-        <td>date appel</td>
+        <td>Date appel</td>
         <td>Heure appel</td>
         <td>Numéro téléphone</td>
         <td>Nom appelant</td>
+        <td>Indicateur rejet</td>
       </thead>
       {% for row in rows %}
       <tr>
@@ -20,6 +25,7 @@
         <td>{{row["heure_modem"]}}</td>
         <td>{{row["num_tel"]}}</td>
         <td>{{row["nom_appel"]}}</td>
+        <td>{{row["ind_rejet"]}}</td>
       </tr>
       {% endfor %}
     </table>

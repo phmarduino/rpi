@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Information contact à ajouter dans la liste blanche</title>
+    <link rel="stylesheet" href="../static/style.css/">
+  </head>
+  <body>
+        <img src="../static/phmarduino_logo-18032020.JPG" height="10%" width=10%"">
+	<h1>Informations Contact</h1>
+	<br>
+	<a href="{{url_for("index")}}"> Aller sur la page d'accueil</a><br>
+	<a href="{{url_for("liste_appels")}}"> Affichage liste des appels</a><br>
+	<a href="{{url_for("liste_contacts")}}"> Affichage liste blanche</a><br>
+	<br>
+	<form action = "{{ url_for('addcontact') }}" method = "POST">
+	<p>Nom : <input type = "text" name = "nom" /></p>
+	<p>Type : <input type = "text" name = "typec" /></p>
+	<p>Indicatif Pays : <input type = "text" name = "indicatif" /></p>
+	<p>Numéro de téléphone	: <input type = "text" name = "numtel" /></p>
+	<input type = "submit" value = "Valider" /><br>
+	</form>	  
+  </body>
+</html>	  
