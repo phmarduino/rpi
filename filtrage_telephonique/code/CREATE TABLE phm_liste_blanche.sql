@@ -1,0 +1,1 @@
+CREATE TABLE "phm_liste_blanche" ( `nu_contact` INTEGER PRIMARY KEY AUTOINCREMENT, `indicatif` TEXT, `num_tel` TEXT, `nom` TEXT, `date_ajout` TEXT, `heure_ajout` TEXT, `dat_der_app` TEXT, `heur_der_app` TEXT, `nb_appels` INTEGER, `type` TEXT )
