@@ -14,11 +14,11 @@
 #include <BH1750.h>         // Gestion capteur BH1750 de Christopher laws 
 
 // Infos WIFI a adapter
-const char* ssid = "freeboxLM";
-const char* password = "722AB93D9F";
+const char* ssid = "votre nom de reseau wifi";
+const char* password = "votre mot de passe wifi";
 
 //Infos MQTT a adapter
-const char* mqttServer = "192.168.0.8";  //Adresse IP du Broker MQTT
+const char* mqttServer = "votre adresse IP locale de votre broker MQTT sur votre RPI";  //Adresse IP du Broker MQTT
 const int mqttPort = 1883;               //Port utilisé par le Broker MQTT
 
 // Creation d un objet client WIFI
