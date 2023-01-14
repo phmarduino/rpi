@@ -56,7 +56,7 @@ def liste_appels():
 #Page liste des contacts    
 @app.route('/liste_contacts')
 def liste_contacts():
-    con = sql.connect("gestion_tel.db")
+    con = sql.connect("/home/pi/modem_appels/gestion_tel.db")
     con.row_factory = sql.Row
     cur = con.cursor()
     cur.execute("select * from phm_liste_blanche")
@@ -81,7 +81,7 @@ def addcontact():
             typec = request.form['typec']
             indicatif = request.form['indicatif']
             
-            with sql.connect("gestion_tel.db") as con:
+            with sql.connect("/home/pi/modem_appels/gestion_tel.db") as con:
                 cur = con.cursor()
                 cur.execute("INSERT INTO phm_liste_blanche (nom,type,indicatif,num_tel,date_ajout,heure_ajout,nb_appels)VALUES (?,?,?,?,?,?,?)",(nom,typec,indicatif,num_tel,madate,monheure,nb_appels) )
                 con.commit()
